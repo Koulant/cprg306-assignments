@@ -77,7 +77,7 @@ export default function ItemList() {
       };
 
       return (
-        <>
+        <> 
             <Item
                 name = {item1.name}
                 quantity = {item1.quantity}
