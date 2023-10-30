@@ -33,7 +33,7 @@ export default function Page() {
     return(
         <main>
             <h1 className="flex text-white items-center justify-center font-bold text-4xl bg-gray-800"
-            >Anton's Shopping List</h1>
+            >Shopping List</h1>
             {/* Pass the handleAddItem event handler to the NewItem component */}
             <NewItem onAddItem={handleAddItem} />
 
