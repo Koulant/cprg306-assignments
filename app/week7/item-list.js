@@ -1,19 +1,24 @@
-//ItemList Component
-
 "use client";
+
 import { useState } from "react";
 
+import Item from "./item"; // Import the Item component
+
+
+//ItemList Component
 export default function ItemList({items, onItemSelect}) {
 
   //Initializing State Variables
   const [sortBy, setSortBy] = useState("name");
 
   //Sorting the items without mutating the original array
-  if (sortBy === "name") {
-    items.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (sortBy === "category") {
-    items.sort((a, b) => a.category.localeCompare(b.category));
+  const sortItems = {
+    name: (a, b) => a.name.localeCompare(b.name),
+    category: (a, b) => a.category.localeCompare(b.category),
   };
+
+  const sortedItems = [...items].sort(sortItems[sortBy] || (() => 0));
+
 
   const handleItemClick = (item) => {
     if (onItemSelect) {
@@ -33,14 +38,15 @@ export default function ItemList({items, onItemSelect}) {
         <button className="bg-purple-200 p-2 m-2 rounded-lg shadow-lg" onClick={() => setSortBy("category")}>Category</button>
       </div>
       <div>
-        <ul>
-          {items.map((item) => (
-            <li 
-              key={item.id}
-              className="bg-purple-200 p-2 m-2 rounded-lg shadow-lg w-1/2 mx-auto"
-              onClick={() => handleItemClick(item)}
-            >
-            </li>
+      <ul>
+          {sortedItems.map((item) => (
+            <Item
+              key={item.name} // Use a unique key, e.g., item.name
+              name={item.name}
+              quantity={item.quantity}
+              category={item.category}
+              onSelect={handleItemClick}
+            />
           ))}
         </ul>
       </div>
