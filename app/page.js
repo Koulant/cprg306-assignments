@@ -1,5 +1,7 @@
 //#2 Edit Root Page
 
+"use client";
+
 import StudentInfo from "./ReactComponent";
 import Link from 'next/link';
 
@@ -38,6 +40,11 @@ export default function Page() {
           <li>
           <Link href="/week7">
               Week 7
+            </Link>
+          </li>
+          <li>
+          <Link href="/week8">
+              Week 8
             </Link>
           </li>
         </ul>
