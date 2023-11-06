@@ -30,14 +30,14 @@ function LandingPage() {
         // User is logged in
         <>
           <p>Welcome, {user.displayName} ({user.email})</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout}>Logout  </button>
           <Link href="/week8/shopping-list">
-            <a>Go to Shopping List</a>
+            Go to Shopping List
           </Link>
         </>
       ) : (
         // User is not logged in
-        <button onClick={handleGitHubSignIn}>Login with GitHub</button>
+        <button onClick={handleGitHubSignIn}> Login with GitHub</button>
       )}
     </div>
   );
