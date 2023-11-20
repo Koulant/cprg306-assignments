@@ -51,10 +51,7 @@ export default function Page() {
           console.error("Error adding item:", error);
           // Handle the error as needed
         }
-      };
-
-    
-    // Additional State Variable
+    };
 
     // New Event Handler
     const handleItemSelect = (selectedItem) => {
@@ -62,9 +59,6 @@ export default function Page() {
         setSelectedItemName(cleanedName);
     };
 
-    // Render the component
-    // Layout Changes
-    // The layout of the page has been modified to accommodate the new features. The NewItem and ItemList components are grouped together on one side, and the MealIdeas component is placed on the other side. This is achieved by wrapping them in a div with a flex property.
     return(
         <main className="flex">
             <div className="w-1/2 p-4">
